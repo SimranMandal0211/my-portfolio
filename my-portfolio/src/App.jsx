@@ -8,9 +8,16 @@ import Testimonials from './section/Testimonials';
 import Contact from './section/Contact';
 import Footer from './section/Footer';
 
+import ParticleBackground from './components/ParticleBackground';
+
 export default function App(){
   return (
     <div className='relative gradient text-white'>
+      <ParticleBackground />
+
+
+
+      
       <Navbar />
       <Home />
       <About />
