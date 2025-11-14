@@ -1,11 +1,28 @@
-import React from 'react'
+import {useState, useEffect} from "react";
 
-const CustomCursor = () => {
-  return (
-    <div>
-      
+
+
+export default function CustomCursor() {
+
+  const [position, setPosition] = useState({x:0, y:0});
+
+  useEffect(() =>{
+    const moveHandler = (e) => {
+      setPosition({x: e.clientX, y: e.clientY})
+    };
+
+    window.addEventListener('mousemove', moveHandler);
+
+    return () => window.removeEventListener('mousemove', moveHandler);
+  })
+
+  return(
+    <div className="pointer-events-none fixed top-0 left-0 z-[9999]"
+      style={{transform: `translate(${position.x - 40}px, ${position.y -40}px)`}} // - 40 is for glow is in center of cursor
+    >
+
+      <div className="w-20 h-20 rounded-full bg-gradient-to-r from-pink-500 to-blue-500 blur-3xl opaccity-80"/>
+
     </div>
   )
 }
-
-export default CustomCursor

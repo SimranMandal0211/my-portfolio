@@ -9,15 +9,18 @@ import Contact from './section/Contact';
 import Footer from './section/Footer';
 
 import ParticleBackground from './components/ParticleBackground';
+import CustomCursor from './components/CustomCursor';
 
 export default function App(){
   return (
     <div className='relative gradient text-white'>
+      <CustomCursor />
+
       <ParticleBackground />
 
 
 
-      
+
       <Navbar />
       <Home />
       <About />
