@@ -1,6 +1,6 @@
 import OverlayMenu from "./OverlayMenu";
-import {useState} from "react";
-import Logo from "../assets/logo.png";
+import {useRef, useState, useEffect} from "react";
+import Logo from "../assets/logoME.png";
 
 import { FiMenu } from "react-icons/fi";
 
@@ -9,6 +9,71 @@ export default function Navbar(){
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
+  const [forceVisible, setForceVisible] = useState(false);
+
+  const lastScrollY = useRef(0);  //storing last scroll position
+  const timerId = useRef(null);   // timoutId store which help in autohide nevbar
+
+
+  useEffect(() => {
+    const homeSection = document.querySelector("#home");
+    const observer = new IntersectionObserver( //browser's API
+      ([entry]) => { 
+        if(entry.isIntersecting){
+          setForceVisible(true);
+          setVisible(true);
+        }else{
+          setForceVisible(false)  // navbar hide
+        }
+      }, 
+      {threshold: 0.1}
+  );
+
+ 
+    if(homeSection) observer.observe(homeSection);
+
+    // when unmount
+    return () => {
+      if(homeSection) observer.unobserve(homeSection);
+    }
+  }, []);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if(forceVisible){
+        setVisible(true);
+        return;
+      }
+
+      const currentScrollY = window.scrollY;  //current scroll position
+      if(currentScrollY > lastScrollY.current){
+        setVisible(false); //navbar not visible
+      }else{
+        setVisible(true);  
+
+        //autohide after 3 sec
+        if(timerId.current)
+            clearTimeout(timerId.current);
+
+        timerId.current = setTimeout(() => {
+          setVisible(false);
+        }, 3000);
+      }
+      lastScrollY.current = currentScrollY;
+    }
+
+
+    window.addEventListener("scroll", handleScroll, {passive: true});
+
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if(timerId.current)
+        clearTimeout(timerId.current);
+    }
+  }, [forceVisible]) ;
+
 
 
   return(
@@ -40,7 +105,7 @@ export default function Navbar(){
       </div>
     </nav>
 
-    <OverlayMenu />
+    <OverlayMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   )
 }
