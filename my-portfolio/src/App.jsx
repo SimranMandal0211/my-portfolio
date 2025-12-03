@@ -16,7 +16,7 @@ export default function App(){
     <div className='relative gradient text-white'>
       <CustomCursor />
 
-      <ParticleBackground />
+      {/* <ParticleBackground /> */}
 
 
 
