@@ -1,19 +1,35 @@
-import {FaJava, FaReact} from 'react-icons/fa';
-import {SiTypescript, SiTailwindcss, SiFastapi, SiMongodb} from 'react-icons/si';
-import { DiNodejsSmall } from 'react-icons/di';
+import {FaJava, FaReact, FaHtml5, FaCss3, FaBootstrap, FaPhp  } from 'react-icons/fa';
+import {SiC, SiCplusplus, SiTypescript, SiExpress, SiTailwindcss, SiPostman, SiMongodb} from 'react-icons/si';
+import { IoLogoJavascript } from "react-icons/io";
+import { IoLogoFirebase } from "react-icons/io5";
+import { TbApi } from "react-icons/tb";
+import { CiDatabase } from "react-icons/ci";
+import { DiMysql ,DiNodejsSmall } from 'react-icons/di';
 import {motion,useMotionValue} from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
 export default function Skills(){
 
   const skills =[
+    { icon: <SiC />, name: "C" },
     { icon: <FaJava />, name: "Java" },
+    { icon: <SiCplusplus />, name: "C++" },
+    { icon: <FaHtml5  />, name: "HTML" },
+    { icon: <FaCss3  />, name: "CSS" },
+    { icon: <IoLogoJavascript  />, name: "Javascript" },
+    { icon: <FaPhp />, name: "PHP" },
+    { icon: <FaBootstrap />, name: "Bootstrap" },
+    { icon: <DiMysql />, name: "MySql" },
+    { icon: <CiDatabase />, name: "Database" },
     { icon: <FaReact />, name: "React" },
+    { icon: <DiNodejsSmall />, name: "Node.js" },
+    { icon: <SiExpress  />, name: "Express" },
+    { icon: <SiMongodb />, name: "MongoDB" },
+    { icon: <IoLogoFirebase />, name: "Firebase" },
+    { icon: <SiPostman />, name: "Postman" },
     { icon: <SiTypescript />, name: "TypeScript" },
     { icon: <SiTailwindcss />, name: "Tailwind CSS" },
-    { icon: <SiFastapi />, name: "FastAPI" },
-    { icon: <DiNodejsSmall />, name: "Node.js" },
-    { icon: <SiMongodb />, name: "MongoDB" },
+    { icon: <TbApi />, name: "API" },
 
   ];
 
