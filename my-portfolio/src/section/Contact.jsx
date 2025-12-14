@@ -214,7 +214,7 @@ export default function Contact(){
             )}
 
 
-            <motion.button className="bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white py-3 rounded-md font-semibold transition"
+            <motion.button className="bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6] disabled:opacity-60 text-white py-3 rounded-md font-semibold transition"
              whileHover ={{scale:1.05}}
              whileTap={{scale:0.95}}
              disabled={status === "sending"}
