@@ -25,7 +25,7 @@ export default function OverlayMenu({isOpen, onClose}){
           
           >
             <button onClick = {onClose}
-              className="absolute top-6 right-6 text-white text-33xl"
+              className="absolute top-6 right-6 text-white text-3xl"
             aria-label="Close Menu">
               <FiX />
             </button>

@@ -9,8 +9,8 @@ import avator from "../assets/avatar.png";
 
 const socials = [
   // {Icon: FaXTwitter, label: "X", href: "http://twitter.com"},
-  {Icon: FaLinkedin, label: "LinkedIn", href: "https://linkedin.com/in/yourprofile"},
-  {Icon: FaGithub, label: "GitHub", href: "https://github.com/yourprofile"},
+  {Icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/simran-mandal0211/"},
+  {Icon: FaGithub, label: "GitHub", href: "https://github.com/SimranMandal0211"},
 ]
 
 const glowVariants = { 
@@ -60,23 +60,23 @@ export default function Home(){
     <ParticleBackground />
     <div>
       <div className="absolute -top-32 -left-32 
-    w-[70vw] sm:w-[z-500vw] md:w-[40vw]
-    h-[70vw] sm:h-[50vw] md:h-[40vw]
-    max-w-[500px] max-h-[500px]
-    rounded-full
-    bg-gradient-to-r from-[#302b3] via-[#00bf8f] to-[#1cd8d2] 
-    opacity-30 sm:opacity-20 md:opacity-10
-    blur-[100px] sm:blur-[130px] md:blur-[150px]
-    animate-pulse
-    "></div>
+      w-[70vw] sm:w-[50vw] md:w-[40vw]
+      h-[70vw] sm:h-[50vw] md:h-[40vw]
+      max-w-[500px] max-h-[500px]
+      rounded-full
+      bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6] 
+      opacity-30 sm:opacity-20 md:opacity-10
+      blur-[100px] sm:blur-[130px] md:blur-[150px]
+      animate-pulse
+      "></div>
 
 
     <div className="absolute bottom-0 right-0 
-    w-[70vw] sm:w-[z-500vw] md:w-[40vw]
+    w-[70vw] sm:w-[50vw] md:w-[40vw]
     h-[70vw] sm:h-[50vw] md:h-[40vw]
     max-w-[500px] max-h-[500px]
     rounded-full
-    bg-gradient-to-r from-[#302b3] via-[#00bf8f] to-[#1cd8d2] 
+    bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6]
     opacity-30 sm:opacity-20 md:opacity-10
     blur-[100px] sm:blur-[130px] md:blur-[150px]
     animate-pulse delay-500
@@ -115,7 +115,7 @@ export default function Home(){
 
         </motion.h1>
 
-        <motion.p className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl max-auto lg:max-0"
+        <motion.p className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:max-0"
         initial={{opacity: 0, y: 20}}
         animate={{opacity: 1, y:0}}
         transition={{delay: 0.4, duration: 0.8}}
@@ -163,7 +163,7 @@ export default function Home(){
 
 
       
-      <div className="relative hidden lg:block">
+      <div className="relative hidden md:block">
         <div className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
         style={{
           right: "10px", width: "min(22vw, 410px)", height: "min(40vw,760px)", borderRadius: "50%",
@@ -171,7 +171,7 @@ export default function Home(){
         }} />
 
         <motion.img src={avator} alt="Simran Mandal"
-        className="absolute top-1 -translate-y-1 object-continer select-none pontter-events-none" //top-1/2
+        className="absolute top-1 -translate-y-1 object-contain select-none pointer-events-none" //top-1/2
         style={{
           right: "-30px", width: "min(45vw, 780px)", maxHeight: "90vh"
         }}

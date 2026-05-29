@@ -24,7 +24,7 @@ export default function App(){
   {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)} />}
 
     {introDone && (
-      <div className='relative gradient text-white'>
+      <div className='relative text-white'>
         <CustomCursor />
 
         {/* <ParticleBackground /> */}

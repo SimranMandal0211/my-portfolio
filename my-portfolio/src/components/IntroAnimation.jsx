@@ -32,7 +32,7 @@ export default function IntroAnimation({onFinish}){
           <motion.div
             className="fixed inset-0 z-[9999] flex items-center justify-center bg-black text-white overflow-hidden"
             initial={{y:0}}
-            exit={{y:"-100",
+            exit={{y:"-100%",
               transition: {
                 duration:1.05, 
                 ease: [0.22, 1, 0.3, 1]

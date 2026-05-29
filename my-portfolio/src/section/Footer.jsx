@@ -3,8 +3,8 @@ import { motion } from "framer-motion"
 
 const socials = [
   // {Icon: FaXTwitter, label: "X", href: "http://twitter.com"},
-  {Icon: FaLinkedin, label: "LinkedIn", href: "https://linkedin.com/in/yourprofile"},
-  {Icon: FaGithub, label: "GitHub", href: "https://github.com/yourprofile"},
+  {Icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/simran-mandal0211/"},
+  {Icon: FaGithub, label: "GitHub", href: "https://github.com/SimranMandal0211"},
 ]
 
 
@@ -30,16 +30,17 @@ export default function Footer(){
       
       <motion.div className="relative z-10 px-4 sm:px-8 lg:px-10 py-16 md:py-20 flex flex-col items-center text-center space-y-6"
         initial={{opacity:0, y:30}}
-        whileInView={{opacity:1, y:3}}
+        whileInView={{opacity:1, y:0}}
         transition={{duration:0.8}}
       >
         <h1 className="font-semibold leading-none text-white text-center select-none"
         style={{
-          fontSize: "clamp(3rem, 5vw, 14rem)",
+          fontSize: "clamp(2rem, 8vw, 10rem)",
           letterSpacing: "0.02em",
           lineHeight: 0.9,
           padding: "0 3vw",
           whiteSpace: "nowrap",
+          overflow: "hidden",
           textShadow: "0 2px 18px rgba(0,0,0,0.45)"
         }}>Simran Mandal</h1>
 

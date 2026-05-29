@@ -69,14 +69,21 @@ export default function Skills(){
     const onTouchStart = (e) => (touchY.current = e.touches[0].clientY);
     const onTouchMove = (e) =>{
       if(touchY.current == null) return; 
-      const delta = e.touches[0].clentY - touchY.current;
+      const delta = e.touches[0].clientY - touchY.current;
       setDir(delta > 0 ? 1 : -1);
       touchY.current = e.touches[0].clientY;
     };
 
     window.addEventListener('wheel', onWheel, {passive: true});
-    window.addEventListener('touchstart', onTouchStart, {passive : true}),
+    window.addEventListener('touchstart', onTouchStart, {passive : true});
     window.addEventListener('touchmove', onTouchMove);
+
+    return () => {
+      window.removeEventListener('wheel', onWheel);
+      window.removeEventListener('touchstart', onTouchStart);
+      window.removeEventListener('touchmove', onTouchMove);
+    };
+
   }, [active]);
 
 

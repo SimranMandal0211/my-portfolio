@@ -89,7 +89,7 @@ export default function Contact(){
         transition={{duration: 0.6}}
         >
           <motion.img src={contactImg} alt="Contact"
-          className = "w-85 md:w-140 rounded-2xl shadow-lg object-cover"
+          className="w-64 md:w-96 rounded-2xl shadow-lg object-cover"
           animate={{y: [0, -10, 0]}}
           transition={{duration:2, repeat: Infinity, ease: "easeInOut"}} 
           />
@@ -128,7 +128,7 @@ export default function Contact(){
                 value={formData.email}
                 className={`p-3 rounded-md bg-white/10 border ${errors.email ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
               />
-              {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
+              {errors.budget && <p className="text-red-500 text-xs">{errors.budget}</p>}
 
             </div>
 
@@ -171,7 +171,7 @@ export default function Contact(){
                  value={formData.budget}
                  className={`p-3 rounded-md bg-white/10 border ${errors.budget ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
                 />
-                {errors.budget && <p className="text-red-500 text-xs">{errors.email}</p>}
+                {errors.budget && <p className="text-red-500 text-xs">{errors.budget}</p>}
               </div>
             )}
 

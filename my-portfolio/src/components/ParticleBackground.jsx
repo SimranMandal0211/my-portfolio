@@ -1,10 +1,10 @@
-import {React, useRef, useEffect} from 'react';
+import {useRef, useEffect} from 'react';
 
 
 
 const ParticleBackground = () => {
   const canvasRef = useRef(null);
-console.log('ParticleBackground');
+// console.log('ParticleBackground');
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
