@@ -9,6 +9,7 @@ import Experience from './section/Experience';
 import Testimonials from './section/Testimonials';
 import Contact from './section/Contact';
 import Footer from './section/Footer';
+import Journey from './section/Journey';
 
 import ParticleBackground from './components/ParticleBackground';
 import CustomCursor from './components/CustomCursor';
@@ -37,7 +38,8 @@ export default function App(){
         <About />
         <Skills />
         <Projects />
-        <Experience />
+        {/* <Experience /> */}
+        <Journey/>
         <Testimonials />
         <Contact />
         <Footer />
