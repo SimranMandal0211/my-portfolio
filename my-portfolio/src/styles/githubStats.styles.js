@@ -1,0 +1,89 @@
+// ─── Section ─────────────────────────────────────────────────────────────────
+export const sectionStyle = {
+  base: "relative min-h-screen bg-black text-white py-20 px-4 md:px-10 overflow-hidden",
+};
+
+// ─── Background glows ────────────────────────────────────────────────────────
+export const glowStyles = {
+  topRight:   "absolute top-1/4 right-0 w-[350px] h-[350px] rounded-full bg-[#9c29c1] opacity-10 blur-[120px] animate-pulse pointer-events-none",
+  bottomLeft: "absolute bottom-1/4 left-0 w-[350px] h-[350px] rounded-full bg-[#d05af6] opacity-10 blur-[120px] animate-pulse delay-500 pointer-events-none",
+};
+
+// ─── Heading ─────────────────────────────────────────────────────────────────
+export const headingStyles = {
+  wrapper:  "text-center mb-16",
+  title:    "text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6]",
+  subtitle: "mt-3 text-gray-400 text-base sm:text-lg",
+  divider:  "mt-4 mx-auto w-24 h-[3px] rounded-full bg-gradient-to-r from-[#9c29c1] to-[#d05af6]",
+};
+
+// ─── Stats grid ───────────────────────────────────────────────────────────────
+export const statsStyles = {
+  grid:        "grid grid-cols-2 md:grid-cols-4 gap-4 mb-12",
+  card:        "relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-center overflow-hidden group",
+  hoverGlow:   "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+  hoverGlowBg: { background: "radial-gradient(circle at 50% 0%, rgba(176,54,216,0.15), transparent 70%)" },
+  value:       "text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9c29c1] to-[#d05af6]",
+  label:       "text-gray-400 text-sm mt-1",
+};
+
+// ─── Main grid ────────────────────────────────────────────────────────────────
+export const layoutStyles = {
+  outerGrid:   "grid grid-cols-1 lg:grid-cols-2 gap-8",
+  leftCol:     "flex flex-col gap-4",
+  imageCard:   "p-1 rounded-2xl border border-white/10 bg-white/5 overflow-hidden",
+  image:       "w-full rounded-xl",
+  rightCol:    "p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm",
+  langTitle:   "text-xl font-bold text-white mb-6 flex items-center gap-2",
+  divider:     "mt-6 pt-4 border-t border-white/10",
+  githubBtn:   "inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full bg-gradient-to-r from-[#9c29c1] to-[#d05af6] text-white hover:opacity-90 transition",
+};
+
+// ─── Language bar ─────────────────────────────────────────────────────────────
+export const langStyles = {
+  wrapper:  "mb-4",
+  row:      "flex justify-between mb-1",
+  name:     "text-sm text-gray-300",
+  track:    "h-2 w-full bg-white/10 rounded-full overflow-hidden",
+  bar:      "h-full rounded-full",
+};
+
+// ─── Framer Motion variants ───────────────────────────────────────────────────
+export const motionVariants = {
+  heading: {
+    initial:    { opacity: 0, y: -30 },
+    whileInView:{ opacity: 1, y: 0 },
+    transition: { duration: 0.6 },
+    viewport:   { once: true },
+  },
+  statCard: (index) => ({
+    initial:    { opacity: 0, y: 30 },
+    whileInView:{ opacity: 1, y: 0 },
+    transition: { duration: 0.5, delay: index * 0.1 },
+    viewport:   { once: true },
+  }),
+  leftCol: {
+    initial:    { opacity: 0, x: -40 },
+    whileInView:{ opacity: 1, x: 0 },
+    transition: { duration: 0.7 },
+    viewport:   { once: true },
+  },
+  rightCol: {
+    initial:    { opacity: 0, x: 40 },
+    whileInView:{ opacity: 1, x: 0 },
+    transition: { duration: 0.7 },
+    viewport:   { once: true },
+  },
+  langBar: (index) => ({
+    initial:    { opacity: 0, x: -20 },
+    whileInView:{ opacity: 1, x: 0 },
+    transition: { duration: 0.5, delay: index * 0.1 },
+    viewport:   { once: true },
+  }),
+  langBarFill: (index, percent) => ({
+    initial:    { width: 0 },
+    whileInView:{ width: `${percent}%` },
+    transition: { duration: 1, delay: index * 0.1 + 0.3, ease: "easeOut" },
+    viewport:   { once: true },
+  }),
+};

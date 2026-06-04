@@ -5,11 +5,13 @@ import Home from './section/Home';
 import About from './section/About';
 import Skills from './section/Skills';
 import Projects from './section/Projects';
-import Experience from './section/Experience';
-import Testimonials from './section/Testimonials';
+// import Experience from './section/Experience';
+// import Testimonials from './section/Testimonials';
 import Contact from './section/Contact';
 import Footer from './section/Footer';
+
 import Journey from './section/Journey';
+import GitHubStats from './section/Githubstats';
 
 import ParticleBackground from './components/ParticleBackground';
 import CustomCursor from './components/CustomCursor';
@@ -40,7 +42,8 @@ export default function App(){
         <Projects />
         {/* <Experience /> */}
         <Journey/>
-        <Testimonials />
+        {/* <Testimonials /> */}
+        <GitHubStats/>
         <Contact />
         <Footer />
       </div>
