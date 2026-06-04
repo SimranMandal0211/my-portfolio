@@ -15,13 +15,15 @@ export const languagesData = [
   { name: "Others",      percent: 8,  color: "#9c29c1" },
 ];
 
+const YOUR_STATS_URL = "https://github-readme-stats-simranmandal.vercel.app";
+
 export const githubImages = [
-  { 
-    alt: "GitHub Stats",  
-    src: (u) => `https://github-readme-stats.vercel.app/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d0d0d&title_color=0d9e9e&icon_color=6b0f6b&text_color=ffffff` 
+  {
+    alt: "GitHub Stats",
+    src: (u) => `${YOUR_STATS_URL}/api?username=${u}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d0d0d&title_color=0d6e6e&icon_color=6b0f6b&text_color=ffffff`
   },
-  { 
-    alt: "GitHub Streak", 
-    src: (u) => `https://streak-stats.demolab.com/?user=${u}&theme=tokyonight&hide_border=true&background=0d0d0d&ring=0d6e6e&fire=6b0f6b&currStreakLabel=ffffff` 
+  {
+    alt: "GitHub Streak",
+    src: (u) => `https://streak-stats.demolab.com/?user=${u}&theme=tokyonight&hide_border=true&background=0d0d0d&ring=0d6e6e&fire=6b0f6b&currStreakLabel=ffffff`
   },
 ];
