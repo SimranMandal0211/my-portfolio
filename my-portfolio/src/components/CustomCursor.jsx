@@ -21,7 +21,7 @@ export default function CustomCursor() {
       style={{transform: `translate(${position.x - 40}px, ${position.y -40}px)`}} // - 40 is for glow is in center of cursor
     >
 
-      <div className="w-20 h-20 rounded-full bg-gradient-to-r from-pink-500 to-blue-500 blur-3xl opacity-80"/>
+      <div className="w-20 h-20 rounded-full bg-gradient-to-r from-[#1dd1a1] to-[#f4c430] blur-3xl opacity-80"/>
 
     </div>
   )

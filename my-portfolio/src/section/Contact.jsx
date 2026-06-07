@@ -78,7 +78,7 @@ export default function Contact(){
 
 
   return(
-    <section id="contact" className="w-full min-h-screen relative bg-black overflow-hidden text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10">
+    <section id="contact" className="w-full min-h-screen relative bg-[#000712] overflow-hidden text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10">
 
       <ParticleBackground />
 
@@ -114,7 +114,7 @@ export default function Contact(){
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`p-3 rounded-md bg-white/10 border ${errors.name ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
+                className={`p-3 rounded-md bg-white/10 border ${errors.name ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
               />
               {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
             </div>
@@ -126,7 +126,7 @@ export default function Contact(){
                 placeholder="Your Email"
                 onChange={handleChange}
                 value={formData.email}
-                className={`p-3 rounded-md bg-white/10 border ${errors.email ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
+                className={`p-3 rounded-md bg-white/10 border ${errors.email ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
               />
               {errors.budget && <p className="text-red-500 text-xs">{errors.budget}</p>}
 
@@ -137,7 +137,7 @@ export default function Contact(){
             <div className="flex flex-col">
               <label className="mb-1">Service Needed <span className="text-red-500">*</span></label>
               <select name="service" 
-                className={`p-3 rounded-md bg-white/10 border ${errors.service ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
+                className={`p-3 rounded-md bg-white/10 border ${errors.service ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
                 value={formData.service}
                 onChange={handleChange}
 
@@ -169,7 +169,7 @@ export default function Contact(){
                  placeholder="Your Budget"
                  onChange={handleChange}
                  value={formData.budget}
-                 className={`p-3 rounded-md bg-white/10 border ${errors.budget ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
+                 className={`p-3 rounded-md bg-white/10 border ${errors.budget ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
                 />
                 {errors.budget && <p className="text-red-500 text-xs">{errors.budget}</p>}
               </div>
@@ -185,7 +185,7 @@ export default function Contact(){
                placeholder="Enter your Idea"
                value={formData.idea}
                onChange={handleChange}
-               className={`p-3 rounded-md bg-white/10 border ${errors.idea ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-blue-500`}
+               className={`p-3 rounded-md bg-white/10 border ${errors.idea ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
               ></textarea>
               
               {errors.idea && 
@@ -199,7 +199,7 @@ export default function Contact(){
               <p
                 className={`text-sm ${
                   status === "success"
-                    ? "text-green-400"
+                    ? "text-[#1dd1a1]"
                     : status === "error"
                     ? "text-red-400"
                     : "text-yellow-400"
@@ -214,11 +214,12 @@ export default function Contact(){
             )}
 
 
-            <motion.button className="bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6] disabled:opacity-60 text-white py-3 rounded-md font-semibold transition"
-             whileHover ={{scale:1.05}}
-             whileTap={{scale:0.95}}
-             disabled={status === "sending"}
-             type="submit"
+            <motion.button className="w-full text-[#000712] bg-[#1dd1a1] disabled:opacity-60 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-[#0fb386]"
+              style={{boxShadow: "0 0 14px rgba(29,209,161,0.4)"}}
+              whileHover ={{scale:1.05}}
+              whileTap={{scale:0.95}}
+              disabled={status === "sending"}
+              type="submit"
             >
               {status === "sending" ? "sending..." : "Send Message"}
             </motion.button>

@@ -120,7 +120,7 @@ const activeProject = projects[activeIndex];
                 )}
               </AnimatePresence>
 
-              <div className={`relative w-full overflow-hidden bg-black/20 shadow-2xl
+              <div className={`relative w-full overflow-hidden bg-[#000712]/20 shadow-2xl
                 md:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] ${
                   isMobile ? "mb- rounded-lg" : "mb-10 sm:mb-12 rounded-xl"
                 }

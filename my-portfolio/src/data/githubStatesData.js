@@ -12,7 +12,7 @@ export const languagesData = [
   { name: "React / JSX", percent: 25, color: "#61dafb" },
   { name: "Java",        percent: 15, color: "#b07219" },
   { name: "CSS",         percent: 12, color: "#563d7c" },
-  { name: "Others",      percent: 8,  color: "#9c29c1" },
+  { name: "Others",      percent: 8,  color: "#1dd1a1" },
 ];
 
 const YOUR_STATS_URL = "https://github-readme-stats-simranmandal.vercel.app";

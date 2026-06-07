@@ -118,17 +118,17 @@ export default function Skills(){
   return(
     <section id="skills" 
     ref = {sectionRef}
-    className="h-1/2 w-full pb-8 flex flex-col items-center justify-center relative bg-black text-white overflow-hidden">
+    className="h-1/2 w-full pb-8 flex flex-col items-center justify-center relative bg-[#000712] text-white overflow-hidden">
 
       <div className='absolute inset-0 pointer-events-none'>
-        <div className='absolute top-1/4 left-0 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6] opacity-20 blur-[120px] animate-pulse' />
+        <div className='absolute top-1/4 left-0 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-[#1dd1a1] via-[#0d6e6e] to-[#1dd1a1] opacity-20 blur-[120px] animate-pulse' />
 
 
-        <div className='absolute top-1/4 right-0 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6] opacity-20 blur-[120px] animate-pulse delay-500'/>
+        <div className='absolute top-1/4 right-0 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-[#1dd1a1] via-[#0d6e6e] to-[#1dd1a1] opacity-20 blur-[120px] animate-pulse delay-500'/>
 
       </div>
 
-      <motion.h2 className='text-4xl mt-5 sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6] z-10'
+      <motion.h2 className='text-4xl mt-5 sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#1dd1a1] via-[#0d6e6e] to-[#1dd1a1] z-10'
       initial={{opacity: 0, y: -30}}
       whileInView={{opacity:1, y:0}}
       transition={{duration: 0.5, delay:0.1 }}
@@ -147,7 +147,7 @@ export default function Skills(){
 
       <div className='relative w-full overflow-hidden'>
         <motion.div ref={trackRef}
-        className='flex gap-10 text-6xl text-[#b036d8]'
+        className='flex gap-10 text-6xl text-[#f4c430]'
         style={{x, whiteSpace: "nowrap", willChange: "transform"}}
         >
           {repeated.map((s, i) => (

@@ -1,32 +1,32 @@
 // ─── Section ──────────────────────────────────
 export const sectionStyle = {
-  base: "relative min-h-screen bg-black text-white py-20 px-4 overflow-hidden",
+  base: "relative min-h-screen bg-[#000712] text-white py-20 px-4 overflow-hidden",
 };
 
 // ─── Background glows ──────────────────────────────
 export const glowStyles = {
-  topLeft:   "absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full bg-[#9c29c1] opacity-10 blur-[120px] animate-pulse pointer-events-none",
-  bottomRight: "absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-[#d05af6] opacity-10 blur-[120px] animate-pulse delay-700 pointer-events-none",
+  topLeft:   "absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full bg-[#1dd1a1] opacity-10 blur-[120px] animate-pulse pointer-events-none",
+  bottomRight: "absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-[#1dd1a1] opacity-10 blur-[120px] animate-pulse delay-700 pointer-events-none",
 };
 
 // ─── Heading ──────────────────────────────────
 export const headingStyles = {
   wrapper: "text-center mb-16",
-  title:   "text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6]",
+  title:   "text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#1dd1a1] via-[#f4c430] to-[#f4c430]",
   subtitle:"mt-3 text-gray-400 text-base sm:text-lg",
-  divider: "mt-4 mx-auto w-24 h-[3px] rounded-full bg-gradient-to-r from-[#9c29c1] to-[#d05af6]",
+  divider: "mt-4 mx-auto w-24 h-[3px] rounded-full bg-gradient-to-r from-[#1dd1a1] to-[#f4c430]",
 };
 
 // ─── Desktop timeline ─────────────────────────
 export const desktopStyles = {
   wrapper:      "hidden md:block relative max-w-4xl mx-auto",
   lineTrack:    "absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/10 rounded-full",
-  lineProgress: { background: "linear-gradient(to bottom, #9c29c1, #d05af6)" },
+  lineProgress: { background: "linear-gradient(to bottom, #1dd1a1, #f4c430)" },
   row: (isLeft) => `relative flex w-full items-center justify-between mb-12 ${isLeft ? "flex-row" : "flex-row-reverse"}`,
   cardWrapper: (isLeft) => `w-[44%] ${isLeft ? "text-right" : "text-left"}`,
   card:         "relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden group",
   cardHoverGlow:(isLeft) => ({
-    background: `radial-gradient(circle at ${isLeft ? "100% 50%" : "0% 50%"}, rgba(176,54,216,0.15), transparent 70%)`,
+    background: `radial-gradient(circle at ${isLeft ? "100% 50%" : "0% 50%"}, rgba(29,209,161,0.15), transparent 70%)`,
   }),
   iconRow: (isLeft) => `flex items-center gap-3 mb-2 ${isLeft ? "justify-end" : "justify-start"}`,
   dot:          "w-5 h-5 rounded-full border-2 border-white/30",

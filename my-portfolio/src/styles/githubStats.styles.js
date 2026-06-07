@@ -1,20 +1,20 @@
 // ─── Section ─────────────────────────────────────────────────────────────────
 export const sectionStyle = {
-  base: "relative min-h-screen bg-black text-white py-20 px-4 md:px-10 overflow-hidden",
+  base: "relative min-h-screen bg-[#000712] text-white py-20 px-4 md:px-10 overflow-hidden",
 };
 
 // ─── Background glows ────────────────────────────────────────────────────────
 export const glowStyles = {
-  topRight:   "absolute top-1/4 right-0 w-[350px] h-[350px] rounded-full bg-[#9c29c1] opacity-10 blur-[120px] animate-pulse pointer-events-none",
-  bottomLeft: "absolute bottom-1/4 left-0 w-[350px] h-[350px] rounded-full bg-[#d05af6] opacity-10 blur-[120px] animate-pulse delay-500 pointer-events-none",
+  topRight:   "absolute top-1/4 right-0 w-[350px] h-[350px] rounded-full bg-[#1dd1a1] opacity-10 blur-[120px] animate-pulse pointer-events-none",
+  bottomLeft: "absolute bottom-1/4 left-0 w-[350px] h-[350px] rounded-full bg-[#1dd1a1] opacity-10 blur-[120px] animate-pulse delay-500 pointer-events-none",
 };
 
 // ─── Heading ─────────────────────────────────────────────────────────────────
 export const headingStyles = {
   wrapper:  "text-center mb-16",
-  title:    "text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6]",
+  title:    "text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#1dd1a1] via-[#f4c430] to-[#f4c430]",
   subtitle: "mt-3 text-gray-400 text-base sm:text-lg",
-  divider:  "mt-4 mx-auto w-24 h-[3px] rounded-full bg-gradient-to-r from-[#9c29c1] to-[#d05af6]",
+  divider:  "mt-4 mx-auto w-24 h-[3px] rounded-full bg-gradient-to-r from-[#1dd1a1] to-[#f4c430]",
 };
 
 // ─── Stats grid ───────────────────────────────────────────────────────────────
@@ -22,8 +22,8 @@ export const statsStyles = {
   grid:        "grid grid-cols-2 md:grid-cols-4 gap-4 mb-12",
   card:        "relative p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-center overflow-hidden group",
   hoverGlow:   "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
-  hoverGlowBg: { background: "radial-gradient(circle at 50% 0%, rgba(176,54,216,0.15), transparent 70%)" },
-  value:       "text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9c29c1] to-[#d05af6]",
+  hoverGlowBg: { background: "radial-gradient(circle at 50% 0%, rgba(29,209,161,0.15), transparent 70%)" },
+  value:       "text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#1dd1a1] to-[#f4c430]",
   label:       "text-gray-400 text-sm mt-1",
 };
 
@@ -36,7 +36,7 @@ export const layoutStyles = {
   rightCol:    "p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm",
   langTitle:   "text-xl font-bold text-white mb-6 flex items-center gap-2",
   divider:     "mt-6 pt-4 border-t border-white/10",
-  githubBtn:   "inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full bg-gradient-to-r from-[#9c29c1] to-[#d05af6] text-white hover:opacity-90 transition",
+  githubBtn: "inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full text-[#1dd1a1] bg-[#1dd1a1]/10 border border-[#1dd1a1] hover:bg-[#1dd1a1] hover:text-[#000712] transition-all duration-300",
 };
 
 // ─── Language bar ─────────────────────────────────────────────────────────────

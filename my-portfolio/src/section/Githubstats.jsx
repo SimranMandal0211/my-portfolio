@@ -31,11 +31,11 @@ function StatCard({ item, index}){
 
     return (
         <motion.div className = {statsStyles.card} {...motionVariants.statCard(index)}
-        whileHover = {{ scale: 1.05, borderColor: 'rgba(176, 54, 216, 0.5)'}}
+            whileHover = {{ scale: 1.05, borderColor: '#1dd1a1'}}
         >
             <div className={statsStyles.hoverGlow} style={statsStyles.hoverGlowBg} />
 
-            <IconComponent className="text-3xl mb-2 mx-auto" style={{ color: "#b036d8", fontSize: "2rem"}} />
+            <IconComponent className="text-3xl mb-2 mx-auto" style={{ color: "#f4c430", fontSize: "2rem"}} />
 
             <div className={statsStyles.value}>{item.value}</div>
             <div className={statsStyles.label}>{item.label}</div>
@@ -127,6 +127,7 @@ export default function GitHubStats(){
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={layoutStyles.githubBtn}
+                                style={{boxShadow: "0 0 14px rgba(29,209,161,0.3)"}}
                             >
                                 <FaGithub style={{ fontSize: "1rem" }} />
                                 View GitHub Profile

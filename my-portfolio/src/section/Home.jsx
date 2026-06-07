@@ -17,7 +17,7 @@ const glowVariants = {
   initial: { scale: 1, y:0, filter: "drop-shadow(0 0 0 rgba(0,0,0,0))"},
   hover: {
       scale: 1.2, y: -3,
-      filter: "drop-shadow(0 0 8px rgba(150, 13, 204, 0.9)) drop-shadow(0 0 18px rgba(185, 16, 129, 0.8))",
+      filter: "drop-shadow(0 0 8px rgba(29,209,161, 0.9)) drop-shadow(0 0 18px rgba(244,196,48, 0.8))",
       transition: { type: "spring", stiffness: 300, damping: 15}
   },
   tap: {scale: 0.95, y:0, transition: {duration: 0.08}}
@@ -54,33 +54,32 @@ export default function Home(){
 
 
   return (
-    <section
-    id="home" className="w-full h-screen relative bg-black overflow-hidden">
+    <section id="home" className="w-full h-screen relative bg-[#000712] overflow-hidden">
     
     <ParticleBackground />
     <div>
-      <div className="absolute -top-32 -left-32 
-      w-[70vw] sm:w-[50vw] md:w-[40vw]
-      h-[70vw] sm:h-[50vw] md:h-[40vw]
-      max-w-[500px] max-h-[500px]
-      rounded-full
-      bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6] 
-      opacity-30 sm:opacity-20 md:opacity-10
-      blur-[100px] sm:blur-[130px] md:blur-[150px]
-      animate-pulse
+      <div className="absolute -top-32 -left-32  
+          w-[70vw] sm:w-[50vw] md:w-[40vw]
+          h-[70vw] sm:h-[50vw] md:h-[40vw]
+          max-w-[500px] max-h-[500px]
+          rounded-full
+          bg-gradient-to-r from-[#1dd1a1] via-[#0d6e6e] to-[#1dd1a1]
+          opacity-30 sm:opacity-20 md:opacity-10
+          blur-[100px] sm:blur-[130px] md:blur-[150px]
+          animate-pulse delay-500
+        "></div>
+
+
+      <div className="absolute bottom-0 right-0 
+        w-[70vw] sm:w-[50vw] md:w-[40vw]
+        h-[70vw] sm:h-[50vw] md:h-[40vw]
+        max-w-[500px] max-h-[500px]
+        rounded-full
+        bg-gradient-to-r from-[#1dd1a1] via-[#0d6e6e] to-[#1dd1a1]
+        opacity-30 sm:opacity-20 md:opacity-10
+        blur-[100px] sm:blur-[130px] md:blur-[150px]
+        animate-pulse delay-500
       "></div>
-
-
-    <div className="absolute bottom-0 right-0 
-    w-[70vw] sm:w-[50vw] md:w-[40vw]
-    h-[70vw] sm:h-[50vw] md:h-[40vw]
-    max-w-[500px] max-h-[500px]
-    rounded-full
-    bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6]
-    opacity-30 sm:opacity-20 md:opacity-10
-    blur-[100px] sm:blur-[130px] md:blur-[150px]
-    animate-pulse delay-500
-    "></div>
     </div>
     
     <div className='relative z-10 h-full w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2'>
@@ -101,7 +100,7 @@ export default function Home(){
           </motion.div>
 
 
-        <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#9c29c1] via-[#b036d8] to-[#d05af6] drop-shadow-lg"
+        <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1dd1a1] via-[#f4c430] to-[#f4c430] drop-shadow-lg"
         initial={{opacity:0, y:40}}
         animate={{opacity:1, y:0}}
         transition={{duration: 1}}
@@ -125,12 +124,13 @@ export default function Home(){
 
 
         <motion.div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6"
-        initial={{opacity:0}}
-        animate={{opacity:1}}
-        transition={{delay: 0.8,duration:0.8}}
+          initial={{opacity:0}}
+          animate={{opacity:1}}
+          transition={{delay: 0.8,duration:0.8}}
         >
           <a href="#projects"
-          className="px-6 py-3 rounded-full font-medium text-lg text-white bg-gradient-to-r from-[#9c29c1] via-[#872e87] to-[#9e4a9e] shadow-lg hover:scale-105 transition-all">View My Work</a>
+          className="px-6 py-3 rounded-full font-medium text-lg text-[#1dd1a1] bg-[#1dd1a1]/10 border border-[#1dd1a1] hover:bg-[#1dd1a1] hover:text-[#000712] transition-all duration-300"
+          style={{boxShadow: "0 0 14px rgba(29,209,161,0.4)"}}>View My Work</a>
           <a href="/Simran_Mandal_Resume.pdf" 
           download
           className="px-6 py-3 rounded-full text-lg font-medium text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all"
@@ -163,11 +163,11 @@ export default function Home(){
 
 
       
-      <div className="relative hidden md:block">
+      <div className="relative hidden lg:block">
         <div className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
         style={{
           right: "10px", width: "min(22vw, 410px)", height: "min(40vw,760px)", borderRadius: "50%",
-          filter: "blur(38px)", opacity: 0.32, background: "conic-gradient(rgba(216, 28, 216, 1), rgb(55, 43, 99), rgba(163, 28, 216, 1))"
+          filter: "blur(38px)", opacity: 0.32, background: "conic-gradient(#1dd1a1, #0d1117, #1dd1a1)"
         }} />
 
         <motion.img src={avator} alt="Simran Mandal"

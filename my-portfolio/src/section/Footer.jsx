@@ -12,7 +12,7 @@ const glowVariants = {
   initial: { scale: 1, y:0, filter: "drop-shadow(0 0 0 rgba(0,0,0,0))"},
   hover: {
       scale: 1.2, y: -3,
-      filter: "drop-shadow(0 0 8px rgba(150, 13, 204, 0.9)) drop-shadow(0 0 18px rgba(185, 16, 129, 0.8))",
+      filter: "drop-shadow(0 0 8px rgba(29,209,161, 0.9)) drop-shadow(0 0 18px rgba(244,196,48, 0.8))",
       transition: { type: "spring", stiffness: 300, damping: 15}
   },
   tap: {scale: 0.95, y:0, transition: {duration: 0.08}}
@@ -21,11 +21,11 @@ const glowVariants = {
 
 export default function Footer(){
   return(
-    <footer className="relative overflow-hidden bg-black">
+    <footer className="relative overflow-hidden bg-[#000712]">
       
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_60%_at_70%_35%, rgba(13,88,202,0.25), transparent_70%)]" /> 
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_60%_at_70%_35%, rgba(29,209,161,0.25), transparent_70%)]" /> 
 
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_55%_at_30%_70%, rgba(16,185,129,0.3), transparent_70%)]" />      
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_55%_at_30%_70%, rgba(244,196,48,0.3), transparent_70%)]" />      
       
       
       <motion.div className="relative z-10 px-4 sm:px-8 lg:px-10 py-16 md:py-20 flex flex-col items-center text-center space-y-6"
@@ -44,7 +44,7 @@ export default function Footer(){
           textShadow: "0 2px 18px rgba(0,0,0,0.45)"
         }}>Simran Mandal</h1>
 
-        <div className="h-[3px] w-24 md:w-32 rounded-full bg-gradient-to-r from-[#0d58cc] via-cyan-300 to-emerald-400" />
+        <div className="h-[3px] w-24 md:w-32 rounded-full bg-gradient-to-r from-[#1dd1a1] via-[#f4c430] to-[#f4c430]" />
 
         <div className="flex gap-5 text-2xl md:text-3xl" >
           {socials.map(({Icon, label, href}) => (

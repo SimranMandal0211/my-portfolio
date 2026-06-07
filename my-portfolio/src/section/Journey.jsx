@@ -43,7 +43,7 @@ function DesktopCard({ item, index }){
             <div className ={desktopStyles.cardWrapper(isLeft)}>
                 <motion.div
                     className={desktopStyles.card}
-                    whileHover={{ scale: 1.03, borderColor: "rgba(176, 54, 216, 0.5)"}}
+                    whileHover={{ scale: 1.03, borderColor: item.color}}
                     transition={{ type: "spring", stiffness: 300, damping: 20}}
                 >
                     {/* Hover Glow */}
