@@ -1,179 +1,255 @@
-import {useEffect, useMemo, useRef, useState} from "react";
-import img1 from '../assets/img1.JPG';
-import img2 from '../assets/img2.JPG';
-import img3 from '../assets/img3.JPG';
-import photo1 from "../assets/photo1.JPG";
-import photo2 from "../assets/photo2.PNG";
-import photo3 from "../assets/photo3.png";
+import { useState } from 'react';
+import {motion, AnimatePresence} from 'framer-motion';
+import { FaGithub } from "react-icons/fa";
+import { FiX, FiExternalLink } from "react-icons/fi";
 
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
+import { projectsData } from "../data/projectData";
+import { iconMap } from '../utils/iconMap';
+import {
+    sectionStyle,
+    glowStyles,
+    headingStyles,
+    gridStyles,
+    cardStyles,
+    modalStyles,
+    motionVariants,
+} from "../styles/projects.styles";
 
-const useIsMobile = (query = "(max-width : 639px)") => {
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== 'undefined' && window.matchMedia(query).matches
-  )
+// ─── Section Heading ────────────────
+ 
+function SectionHeading() {
+  return (
+    <motion.div className={headingStyles.wrapper} {...motionVariants.heading}>
+      <h2 className={headingStyles.title}>My Projects</h2>
+      <p className={headingStyles.subtitle}>Things I've built with passion</p>
+      <div className={headingStyles.divider} />
+    </motion.div>
+  );
+}
 
-  useEffect(() => {
-    if(typeof window === "undefined") return;
-    const mql = window.matchMedia(query);
-    const handler = (e) => setIsMobile(e.matches);
+// Tag ---------------
 
-    mql.addEventListener("change", handler);
-    setIsMobile(mql.matches);
-    return () => mql.removeEventListener("change", handler);
-  }, [query])
+function Tag({ tag, small = false }) {
+  return (
+    <span
+      className={small ? cardStyles.tag : modalStyles.tag}
+      style={{
+        background: `${tag.color}15`,
+        color: tag.color,
+        border: `1px solid ${tag.color}30`,
+      }}
+    >
+      {tag.name}
+    </span>
+  );
+}
 
-  return isMobile;
+
+// small card ---------
+
+function ProjectCard({ project, index, onClick }) {
+  const IconComponent = iconMap[project.icon];
+ 
+  return (
+    <motion.div
+      className={cardStyles.wrapper}
+      style={{ "--hover-color": project.color }}
+      {...motionVariants.card(index)}
+      whileHover={{
+        y: -6,
+        borderColor: `${project.color}50`,
+        boxShadow: `0 12px 32px rgba(0,0,0,0.4), 0 0 20px ${project.color}15`,
+      }}
+      onClick={() => onClick(project)}
+    >
+      {/* Top accent line on hover */}
+      <div
+        className={cardStyles.topAccent}
+        style={{ background: project.color }}
+      />
+ 
+      {/* Icon */}
+      <div className={cardStyles.iconWrapper}>
+        {IconComponent && (
+          <IconComponent style={{ color: project.color, fontSize: "2rem" }} />
+        )}
+      </div>
+ 
+      {/* Badge */}
+      {project.badge && (
+        <div
+          className={cardStyles.badge}
+          style={{
+            background: `${project.badgeColor}20`,
+            color: project.badgeColor,
+            border: `1px solid ${project.badgeColor}30`,
+          }}
+        >
+          {project.badge}
+        </div>
+      )}
+ 
+      {/* Title */}
+      <div className={cardStyles.title}>{project.title}</div>
+ 
+      {/* Short description */}
+      <div className={cardStyles.desc}>{project.shortDesc}</div>
+ 
+      {/* Tags */}
+      <div className={cardStyles.tagsRow}>
+        {project.tags.slice(0, 3).map((tag, i) => (
+          <Tag key={i} tag={tag} small />
+        ))}
+      </div>
+    </motion.div>
+  );
 }
 
 
 
-export default function Projects(){
-  const isMobile = useIsMobile();
-  const sceneRef = useRef(null);
-  const projects = useMemo(() => [
-    {
-      title: "nk studio",
-      link: "https://www.nk.studio/",
-      bgColor: "#0d4d3d",
-      image: isMobile ? photo1 : img1
-    }, 
-    {
-      title: "Gamily",
-      link: "https://gamilyapp.com/",
-      bgColor: "#3884d3",
-      image: isMobile ? photo2 : img2,
-    },
-    {
-      title: "Hungry Tiger",
-        link: "https://www.eathungrytiger.com/",
-        bgColor: "#dc9317",
-        image: isMobile ? photo3 : img3,
-      },
-  ],
-  [isMobile] //re-run only when 'isMobile' changes
-);
+// ─── Preview Modal ──────────────────────
 
-const {scrollYProgress} = useScroll({
-  target: sceneRef,
-  offset : ["start start", "end end"]
-})
-const thresholds = projects.map((_,i) => (i+1)/projects.length)
-const [activeIndex, setActiveIndex] = useState(0);
-
-useMotionValueEvent(scrollYProgress, "change", (v) => {
-  const idx = thresholds.findIndex((t) => v <= t);
-  setActiveIndex(idx === -1 ? thresholds.length - 1 : idx)
-});
-
-
-const activeProject = projects[activeIndex];
-
-
-  return(
-    <section id="projects" 
-      ref={sceneRef}
-      className="relative text-white"
-        style={{
-          height: `${100*projects.length}vh`,
-          backgroundColor: activeProject.bgColor,
-          transition: "background-color 400ms ease"
-        }}
+function ProjectModal({ project, onClose }) {
+  const IconComponent = iconMap[project.icon];
+ 
+  return (
+    <motion.div
+      className={modalStyles.overlay}
+      {...motionVariants.overlay}
+      onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
-        <h2 className={`text-3xl font-semibold z-10 text-center ${
-          isMobile ? "mt-4" : "mt-8"
-        }`}>
-          My Work
-        </h2>
-
-        <div className={`relative w-full flex-1 flex items-center justify-center ${
-          isMobile ? "-mt-4" : ""
-        }`}>
-          {projects.map((project, idx) => (
-            <div key={project.title}
-              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
-                activeIndex === idx ? "opacity-100 z-20" : "opacity-0 z-0 sm:z-10"
-              }`}
-              style={{width : "85%" , maxWidth: "1200px"}}
+      <motion.div
+        className={modalStyles.container}
+        {...motionVariants.modal}
+      >
+        {/* Close button */}
+        <button className={modalStyles.closeBtn} onClick={onClose}>
+          <FiX size={16} />
+        </button>
+ 
+        {/* Image / Icon section */}
+        <div
+          className={modalStyles.imgSection}
+          style={{ background: project.bgColor }}
+        >
+          {project.image ? (
+            <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full h-full block cursor-pointer"
+                title="Click to view live demo"
             >
-              <AnimatePresence mode="wait">
-                {activeIndex === idx && (
-                  <motion.h3 key={project.title}
-                    initial = {{opacity: 0, y: -30}}
-                    animate = {{opacity: 1, y: 0}}
-                    exit = {{opacity: 0, y: 30}}
-                    transition = {{duration: 0.5 , ease: "easeOut"}}
-
-                    className={`block text-center text-[clamp(2rem, 6vw, 5rem)] text-white/95 sm:absolute sm:top-20 sm:left-[35%] 
-                    lg:left-[-5%] sm:mb-0 italic font-semibold ${
-                        isMobile ? "-mt-24" : ""
-                      }`}
-                      style={{
-                        zIndex : 5,
-                        textAlign: isMobile ? "center": "left",
-                      }}
-                  >
-                      {project.title}
-                  </motion.h3>
-                )}
-              </AnimatePresence>
-
-              <div className={`relative w-full overflow-hidden bg-[#000712]/20 shadow-2xl
-                md:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] ${
-                  isMobile ? "mb- rounded-lg" : "mb-10 sm:mb-12 rounded-xl"
-                }
-                h-[28vh] sm:h-[66vh]
-                `}
-                
-                style={{zIndex:10, transition: "box-shadow 250ms ease"}}
-                
-                >
-                <img src={project.image} alt={project.title}
-                 className="w-full h-full object-cover drop-shadow-xl md:drop-shadow-2xl"
-                 style={{
-                  position : "relative",
-                  zIndex : 10, 
-                  filter : "drop-shadow(0, 16px 40px rgba(0,0,0,0.65)",
-                  transition: "filter 200ms ease", 
-
-                 }}
-                 loading="lazy"
-
+                <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover object-top hover:opacity-90 transition duration-300"
                 />
-
-
-                <div className="pointer-events-none absolute inset-0"
-                style={{
-                  zIndex: 11, 
-                  background: "linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0) 40%)"
-                }}>
-
-                </div>
-              </div>
-
-
-
+            </a>
+            ) : (
+                IconComponent && (
+                    <IconComponent
+                        style={{ color: project.color, fontSize: "5rem", opacity: 0.8 }}
+                    />
+                )
+            )}
+        </div>
+ 
+        {/* Body */}
+        <div className={modalStyles.body}>
+          {/* Badge */}
+          {project.badge && (
+            <div
+              className={modalStyles.badge}
+              style={{
+                background: `${project.badgeColor}20`,
+                color: project.badgeColor,
+                border: `1px solid ${project.badgeColor}30`,
+              }}
+            >
+              {project.badge}
             </div>
-          ))}
+          )}
+ 
+          {/* Title */}
+          <div className={modalStyles.title}>{project.title}</div>
+ 
+          {/* Description */}
+          <div className={modalStyles.desc}>{project.description}</div>
+ 
+          {/* Tags */}
+          <div className={modalStyles.tagsRow}>
+            {project.tags.map((tag, i) => (
+              <Tag key={i} tag={tag} />
+            ))}
+          </div>
+ 
+          {/* Buttons */}
+          <div className={modalStyles.btnsRow}>
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={modalStyles.liveBtn}
+              style={{ boxShadow: "0 0 14px rgba(29,209,161,0.3)" }}
+            >
+              <FiExternalLink size={14} />
+              Live Demo
+            </a>
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={modalStyles.githubBtn}
+              style={{ boxShadow: "0 0 14px rgba(167,139,250,0.2)" }}
+            >
+              <FaGithub size={14} />
+              GitHub
+            </a>
+          </div>
         </div>
-
-        <div className={`absolute ${
-          isMobile ? "bottom-20" : "bottom-10"
-        }`}>
-          <a href={activeProject ?. link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-6 py-3 font-semibold rounded-lg bg-white text-black hover:bg-gray-200 transition-all"
-          aria-label={`View ${activeProject?.title}`}
-          >View Project</a>
-        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
 
 
-
+// ─── Main Section ────────────────────
+ 
+export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+ 
+  return (
+    <section id="projects" className={sectionStyle.base}>
+ 
+      {/* Background glows */}
+      <div className={glowStyles.topLeft} />
+      <div className={glowStyles.bottomRight} />
+ 
+      <SectionHeading />
+ 
+      {/* Projects Grid */}
+      <div className={gridStyles.wrapper}>
+        {projectsData.map((project, index) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            index={index}
+            onClick={setSelectedProject}
+          />
+        ))}
       </div>
-
+ 
+      {/* Preview Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
+ 
     </section>
-  )
+  );
 }

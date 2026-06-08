@@ -84,11 +84,11 @@ export default function Home(){
     
     <div className='relative z-10 h-full w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2'>
       <div className='flex flex-col justify-center h-full text-center lg:text-left relative'>
-        <div className='w-full lg:pr-24 mx-auto max-w-[48rem]'>
-          <motion.div className='mb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white tracking-wide min-h-[1.6rem]'
-          initial ={{opacity:0, y:12}}
-          animate={{opacity:1, y:0}}
-          transition={{duration:0.6}}
+        <div className='w-full lg:pr-16 mx-auto max-w-[38rem]'>
+          <motion.div className='mb-3 text-lg sm:text-xl md:text-2xl lg:text-4xl font-semibold text-white tracking-wide min-h-[1.6rem]'   
+            initial ={{opacity:0, y:12}}
+            animate={{opacity:1, y:0}}
+            transition={{duration:0.6}}
           >
             <span>
               {roles[index].substring(0, subIndex)}
@@ -100,27 +100,33 @@ export default function Home(){
           </motion.div>
 
 
-        <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1dd1a1] via-[#f4c430] to-[#f4c430] drop-shadow-lg"
-        initial={{opacity:0, y:40}}
-        animate={{opacity:1, y:0}}
-        transition={{duration: 1}}
+        <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1dd1a1] via-[#f4c430] to-[#f4c430] drop-shadow-lg"
+          initial={{opacity:0, y:40}}
+          animate={{opacity:1, y:0}}
+          transition={{duration: 1}}
         >
           
           Hello, I'm <br/>
-          <span className="text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap">
+          <span className="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-8xl lg:whitespace-nowrap">  
             Simran Mandal
           </span>
 
 
         </motion.h1>
 
-        <motion.p className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:max-0"
-        initial={{opacity: 0, y: 20}}
-        animate={{opacity: 1, y:0}}
-        transition={{delay: 0.4, duration: 0.8}}
+        <motion.p className="mt-6 text-base sm:text-lg md:text-xl text-gray-500 max-w-2xl mx-auto lg:max-0"
+          initial={{opacity: 0, y: 20}}
+          animate={{opacity: 1, y:0}}
+          transition={{delay: 0.4, duration: 0.8}}
         >
-          
-          I turn complex ideas into seamless, high-impact web experiences - building modern, scalable, and lightning-fast applications that make a difference.</motion.p>
+          I turn complex ideas into{" "}
+          <span className="text-[#1dd1a1] font-medium">seamless, high-impact</span>
+          {" "}web experiences — building{" "}
+          <span className="text-[#f4c430] font-medium">modern, scalable</span>
+          {" "}and {" "}
+          <span className="text-[#a78bfa] font-medium">lightning-fast</span>
+          {" "}applications that make a difference.
+        </motion.p>
 
 
         <motion.div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6"
@@ -164,23 +170,21 @@ export default function Home(){
 
       
       <div className="relative hidden lg:block">
-        <div className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
-        style={{
-          right: "10px", width: "min(22vw, 410px)", height: "min(40vw,760px)", borderRadius: "50%",
-          filter: "blur(38px)", opacity: 0.32, background: "conic-gradient(#1dd1a1, #0d1117, #1dd1a1)"
-        }} />
+        <div className="absolute top-[55%] -translate-y-1/2 right-0 object-contain select-none pointer-events-none"
+          style={{
+            right: "10px", width: "min(22vw, 410px)", height: "min(40vw,760px)", borderRadius: "50%",
+            filter: "blur(38px)", opacity: 0.32, background: "conic-gradient(#1dd1a1, #0d1117, #1dd1a1)"
+          }} 
+        />
 
         <motion.img src={avator} alt="Simran Mandal"
-        className="absolute top-1 -translate-y-1 object-contain select-none pointer-events-none" //top-1/2
-        style={{
-          right: "-30px", width: "min(45vw, 780px)", maxHeight: "90vh"
-        }}
-
-
-        initial={{opacity:0, y:40, scale:0.98}}
-        animate={{opacity:1, y:0, scale:1}}
-        transition={{delay: 0.2, duration:0.8}}
-        
+          className="absolute right-0 object-contain select-none pointer-events-none"
+          style={{
+            bottom: "40px", width: "min(42vw, 600px)", maxHeight: "85vh"
+          }}
+          initial={{opacity:0, y:40, scale:0.98}}
+          animate={{opacity:1, y:0, scale:1}}
+          transition={{delay: 0.2, duration:0.8}}
         />
       </div>
 
