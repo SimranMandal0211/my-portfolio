@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {motion, AnimatePresence } from "framer-motion";
 
 
@@ -11,8 +11,8 @@ export default function IntroAnimation({onFinish}){
   ], []);
 
 
-  const [index, setIndex] = React.useState(0);
-  const [visible, setVisible] = React.useState(true);
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     if(index < greetings.length-1){

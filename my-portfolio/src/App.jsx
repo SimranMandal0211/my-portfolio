@@ -5,8 +5,6 @@ import Home from './section/Home';
 import About from './section/About';
 import Skills from './section/Skills';
 import Projects from './section/Projects';
-// import Experience from './section/Experience';
-// import Testimonials from './section/Testimonials';
 import Contact from './section/Contact';
 import Footer from './section/Footer';
 
@@ -27,10 +25,15 @@ export default function App(){
   {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)} />}
 
     {introDone && (
-      <div className='relative text-white'>
+      <div className='relative text-white bg-[#000712]'>
         <CustomCursor />
+        <div className="fixed inset-0 pointer-events-none z-0">
+          <div className="absolute top-[15%] left-[10%] w-[700px] h-[700px] rounded-full bg-[#1dd1a1] opacity-[0.03] blur-[200px]" />
+          <div className="absolute top-[55%] right-[5%] w-[600px] h-[600px] rounded-full bg-[#f4c430] opacity-[0.025] blur-[200px]" />
+          <div className="absolute top-[80%] left-[30%] w-[500px] h-[500px] rounded-full bg-[#a78bfa] opacity-[0.02] blur-[180px]" />
+        </div>
 
-        {/* <ParticleBackground /> */}
+        <ParticleBackground />
 
 
 

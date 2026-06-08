@@ -21,7 +21,7 @@ const glowVariants = {
 
 export default function Footer(){
   return(
-    <footer className="relative overflow-hidden bg-[#000712]">
+    <footer className="relative overflow-hidden">
       
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_60%_at_70%_35%, rgba(29,209,161,0.25), transparent_70%)]" /> 
 

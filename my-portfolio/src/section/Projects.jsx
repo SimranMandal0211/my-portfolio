@@ -6,14 +6,13 @@ import { FiX, FiExternalLink } from "react-icons/fi";
 import { projectsData } from "../data/projectData";
 import { iconMap } from '../utils/iconMap';
 import {
-    sectionStyle,
     glowStyles,
-    headingStyles,
     gridStyles,
     cardStyles,
     modalStyles,
     motionVariants,
-} from "../styles/projects.styles";
+} from "../styles/Projects.styles";
+import { sectionStyle, headingStyles} from '../styles/shared.styles';
 
 // ─── Section Heading ────────────────
  
@@ -149,7 +148,7 @@ function ProjectModal({ project, onClose }) {
             ) : (
                 IconComponent && (
                     <IconComponent
-                        style={{ color: project.color, fontSize: "5rem", opacity: 0.8 }}
+                      style={{ color: project.color, fontSize: project.iconSize || "5rem", opacity: 0.8 }}
                     />
                 )
             )}
@@ -221,10 +220,6 @@ export default function Projects() {
  
   return (
     <section id="projects" className={sectionStyle.base}>
- 
-      {/* Background glows */}
-      <div className={glowStyles.topLeft} />
-      <div className={glowStyles.bottomRight} />
  
       <SectionHeading />
  

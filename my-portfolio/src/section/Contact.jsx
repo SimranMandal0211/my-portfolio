@@ -78,29 +78,26 @@ export default function Contact(){
 
 
   return(
-    <section id="contact" className="w-full min-h-screen relative bg-[#000712] overflow-hidden text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10">
-
-      <ParticleBackground />
+    <section id="contact" className="w-full min-h-screen relative overflow-hidden text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10">
 
       <div className="relative z-10 w-full flex flex-col md:flex-row items-center gap-10">
         <motion.div className="w-full md:w-1/2 flex justify-center"
-        initial = {{opacity: 0, x: -50}}
-        whileInView ={{opacity:1, x: 0}}
-        transition={{duration: 0.6}}
+          initial = {{opacity: 0, x: -50}}
+          whileInView ={{opacity:1, x: 0}}
+          transition={{duration: 0.6}}
         >
           <motion.img src={contactImg} alt="Contact"
-          className="w-64 md:w-96 rounded-2xl shadow-lg object-cover"
-          animate={{y: [0, -10, 0]}}
-          transition={{duration:2, repeat: Infinity, ease: "easeInOut"}} 
+            className="w-64 md:w-96 rounded-2xl shadow-lg object-cover"
+            animate={{y: [0, -10, 0]}}
+            transition={{duration:2, repeat: Infinity, ease: "easeInOut"}} 
           />
         </motion.div>
 
 
         <motion.div className =" w-full md:w-1/2 bg-white/5 p-8 rounded-2xl shadow-lg border border-white/10"
-        initial={{opacity: 0, x:50}}
-        whileInView={{opacity:1, x:0}}
-        transition={{duration:0.6, delay: 0.2}}
-
+          initial={{opacity: 0, x:50}}
+          whileInView={{opacity:1, x:0}}
+          transition={{duration:0.6, delay: 0.2}}
         >
           {/* right side */}
           <h2 className="text-3xl ">
@@ -128,7 +125,7 @@ export default function Contact(){
                 value={formData.email}
                 className={`p-3 rounded-md bg-white/10 border ${errors.email ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
               />
-              {errors.budget && <p className="text-red-500 text-xs">{errors.budget}</p>}
+              {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
 
             </div>
 
@@ -165,11 +162,11 @@ export default function Contact(){
               <div className="flex flex-col">
                 <label className="mb-1">Budget <span className="text-red-500">*</span></label>
                 <input type="text"
-                 name="budget"
-                 placeholder="Your Budget"
-                 onChange={handleChange}
-                 value={formData.budget}
-                 className={`p-3 rounded-md bg-white/10 border ${errors.budget ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
+                  name="budget"
+                  placeholder="Your Budget"
+                  onChange={handleChange}
+                  value={formData.budget}
+                  className={`p-3 rounded-md bg-white/10 border ${errors.budget ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
                 />
                 {errors.budget && <p className="text-red-500 text-xs">{errors.budget}</p>}
               </div>
@@ -181,11 +178,11 @@ export default function Contact(){
                 <span className="text-red-500">*</span>
               </label>
               <textarea name="idea"
-               rows={5}
-               placeholder="Enter your Idea"
-               value={formData.idea}
-               onChange={handleChange}
-               className={`p-3 rounded-md bg-white/10 border ${errors.idea ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
+                rows={5}
+                placeholder="Enter your Idea"
+                value={formData.idea}
+                onChange={handleChange}
+                className={`p-3 rounded-md bg-white/10 border ${errors.idea ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
               ></textarea>
               
               {errors.idea && 

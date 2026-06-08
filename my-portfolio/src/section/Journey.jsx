@@ -2,21 +2,10 @@ import { iconMap } from '../utils/iconMap';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { journeyData } from '../data/journeyData';  
-import { sectionStyle, glowStyles, headingStyles, desktopStyles, mobileStyles, badgeStyle, cardTextStyles, motionVariants,} from '../styles/journey.styles';
+import { glowStyles, desktopStyles, mobileStyles, badgeStyle, cardTextStyles, motionVariants,} from '../styles/journey.styles';
 
-// shared function
-// function SectionHeading(){
-//     return (
-//         <motion.div
-//             className={headingStyles.wrapper}
-//             {...motionVariants.heading}
-//         >
-//             <h2 className={headingStyles.title}>My Journey</h2>
-//             <p className={headingStyles.subtitle}>From curiosity to craft -- every step shaped who I am</p>
-//             <div className={headingStyles.divider}></div>
-//         </motion.div>
-//     )
-// }
+
+import { sectionStyle, headingStyles} from '../styles/shared.styles';
 
 function YearBadge({ year, color}){
     return (
@@ -137,12 +126,6 @@ export default function Journey(){
             id="journey"
             className = {sectionStyle.base}
         >
-            {/* Background Glow */}
-            <div className={glowStyles.topLeft} />
-            <div className={glowStyles.bottomRight} />
-
-            {/* <SectionHeading /> */}
-            {/* section heading */}
             <motion.div
                 className={headingStyles.wrapper}
                 {...motionVariants.heading}

@@ -16,12 +16,13 @@ export const projectsData = [
         bgColor: "#0a1f1a",
         liveLink: "https://busybuy-redux.onrender.com/",
         githubLink: "https://github.com/SimranMandal0211/BusyBuy_Redux",
-        image: '/public/projectImgs/BuyBazarImg.png', // replace with: buyBusyImg
+        image: '/projectImgs/BuyBazarImg.png',
     },
 
     {
     id: 2,
     icon: "FaComments",
+    iconSize: "8rem",
     title: "Codeial",
     badge: "Full Stack",
     badgeColor: "#a78bfa",

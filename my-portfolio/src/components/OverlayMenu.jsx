@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion"
 import { FiX } from "react-icons/fi";
 
@@ -12,8 +13,14 @@ const menuItems = [
 ];
 
 export default function OverlayMenu({isOpen, onClose}){
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
-  const origin = isMobile ? "95% 8%" : "50% 8%"
+  const [origin, setOrigin] = useState("95% 8%");
+
+  useEffect(() => {
+    const update = () => setOrigin(window.innerWidth < 1024 ? "95% 8%" : "50% 8%");
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   return(
     <AnimatePresence>

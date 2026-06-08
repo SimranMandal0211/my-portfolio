@@ -5,14 +5,13 @@ import {GITHUB_USERNAME, statsData, languagesData, githubImages } from '../data/
 import {iconMap} from '../utils/iconMap';
 
 import {
-    sectionStyle,
     glowStyles,
-    headingStyles,
     statsStyles,
     layoutStyles,
     langStyles,
     motionVariants
 } from '../styles/githubStats.styles';
+import { sectionStyle, headingStyles} from '../styles/shared.styles';
 
 //  ------- Heading -------
 function SectionHeading(){
@@ -74,6 +73,7 @@ function GitHubImageCard({ img }) {
         alt={img.alt}
         className={layoutStyles.image}
         loading="lazy"
+        onError={(e) => e.currentTarget.style.display = 'none'}
       />
     </div>
   );
@@ -86,9 +86,6 @@ function GitHubImageCard({ img }) {
 export default function GitHubStats(){
     return (
         <section id="github-stats" className={sectionStyle.base}>
-            {/* Background glows */}
-            <div className={glowStyles.topRight} />
-            <div className={glowStyles.bottomLeft} />
 
             <SectionHeading />
 

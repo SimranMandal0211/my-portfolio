@@ -1,20 +1,7 @@
-// ─── Section ─────────────────────────────────────────────────────────────────
-export const sectionStyle = {
-  base: "relative min-h-screen bg-[#000712] text-white py-20 px-4 md:px-10 overflow-hidden",
-};
-
 // ─── Background glows ────────────────────────────────────────────────────────
 export const glowStyles = {
   topLeft:    "absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full bg-[#1dd1a1] opacity-5 blur-[120px] animate-pulse pointer-events-none",
   bottomRight:"absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-[#a78bfa] opacity-5 blur-[120px] animate-pulse delay-700 pointer-events-none",
-};
-
-// ─── Heading ─────────────────────────────────────────────────────────────────
-export const headingStyles = {
-  wrapper:  "text-center mb-16",
-  title:    "text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#1dd1a1] via-[#a78bfa] to-[#f4c430]",
-  subtitle: "mt-3 text-gray-400 text-base sm:text-lg",
-  divider:  "mt-4 mx-auto w-24 h-[3px] rounded-full bg-gradient-to-r from-[#1dd1a1] to-[#f4c430]",
 };
 
 // ─── Grid ─────────────────────────────────────────────────────────────────────

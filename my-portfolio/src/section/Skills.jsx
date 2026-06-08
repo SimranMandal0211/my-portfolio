@@ -76,7 +76,7 @@ export default function Skills(){
 
     window.addEventListener('wheel', onWheel, {passive: true});
     window.addEventListener('touchstart', onTouchStart, {passive : true});
-    window.addEventListener('touchmove', onTouchMove);
+    window.addEventListener('touchmove', onTouchMove, { passive: true });
 
     return () => {
       window.removeEventListener('wheel', onWheel);
@@ -117,16 +117,8 @@ export default function Skills(){
 
   return(
     <section id="skills" 
-    ref = {sectionRef}
-    className="h-1/2 w-full pb-8 flex flex-col items-center justify-center relative bg-[#000712] text-white overflow-hidden">
-
-      <div className='absolute inset-0 pointer-events-none'>
-        <div className='absolute top-1/4 left-0 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-[#1dd1a1] via-[#0d6e6e] to-[#1dd1a1] opacity-20 blur-[120px] animate-pulse' />
-
-
-        <div className='absolute top-1/4 right-0 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-[#1dd1a1] via-[#0d6e6e] to-[#1dd1a1] opacity-20 blur-[120px] animate-pulse delay-500'/>
-
-      </div>
+      ref={sectionRef}
+      className="w-full py-24 flex flex-col items-center justify-center relative text-white overflow-hidden">
 
       <motion.h2 className='text-4xl mt-5 sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#1dd1a1] via-[#0d6e6e] to-[#1dd1a1] z-10'
       initial={{opacity: 0, y: -30}}

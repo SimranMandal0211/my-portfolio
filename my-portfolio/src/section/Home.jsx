@@ -33,7 +33,7 @@ export default function Home(){
   const [deleting, setDeleting] = React.useState(false);
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     const current = roles[index];
     const timeout = setTimeout(() => {
       if(!deleting && subIndex < current.length) setSubIndex (v => v+1);
@@ -54,37 +54,11 @@ export default function Home(){
 
 
   return (
-    <section id="home" className="w-full h-screen relative bg-[#000712] overflow-hidden">
+    <section id="home" className="w-full min-h-screen relative overflow-hidden">
     
-    <ParticleBackground />
-    <div>
-      <div className="absolute -top-32 -left-32  
-          w-[70vw] sm:w-[50vw] md:w-[40vw]
-          h-[70vw] sm:h-[50vw] md:h-[40vw]
-          max-w-[500px] max-h-[500px]
-          rounded-full
-          bg-gradient-to-r from-[#1dd1a1] via-[#0d6e6e] to-[#1dd1a1]
-          opacity-30 sm:opacity-20 md:opacity-10
-          blur-[100px] sm:blur-[130px] md:blur-[150px]
-          animate-pulse delay-500
-        "></div>
-
-
-      <div className="absolute bottom-0 right-0 
-        w-[70vw] sm:w-[50vw] md:w-[40vw]
-        h-[70vw] sm:h-[50vw] md:h-[40vw]
-        max-w-[500px] max-h-[500px]
-        rounded-full
-        bg-gradient-to-r from-[#1dd1a1] via-[#0d6e6e] to-[#1dd1a1]
-        opacity-30 sm:opacity-20 md:opacity-10
-        blur-[100px] sm:blur-[130px] md:blur-[150px]
-        animate-pulse delay-500
-      "></div>
-    </div>
-    
-    <div className='relative z-10 h-full w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2'>
-      <div className='flex flex-col justify-center h-full text-center lg:text-left relative'>
-        <div className='w-full lg:pr-16 mx-auto max-w-[38rem]'>
+    <div className='relative z-10 min-h-screen w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2'>
+      <div className='flex flex-col justify-center min-h-screen text-center lg:text-left relative'>
+        <div className='w-full lg:pr-16 mx-auto max-w-[38rem] pt-20'>
           <motion.div className='mb-3 text-lg sm:text-xl md:text-2xl lg:text-4xl font-semibold text-white tracking-wide min-h-[1.6rem]'   
             initial ={{opacity:0, y:12}}
             animate={{opacity:1, y:0}}
@@ -135,12 +109,16 @@ export default function Home(){
           transition={{delay: 0.8,duration:0.8}}
         >
           <a href="#projects"
-          className="px-6 py-3 rounded-full font-medium text-lg text-[#1dd1a1] bg-[#1dd1a1]/10 border border-[#1dd1a1] hover:bg-[#1dd1a1] hover:text-[#000712] transition-all duration-300"
-          style={{boxShadow: "0 0 14px rgba(29,209,161,0.4)"}}>View My Work</a>
+            className="px-6 py-3 rounded-full font-medium text-lg text-[#1dd1a1] bg-[#1dd1a1]/10 border border-[#1dd1a1] hover:bg-[#1dd1a1] hover:text-[#000712] transition-all duration-300"
+            style={{boxShadow: "0 0 14px rgba(29,209,161,0.4)"}}>
+              View My Work
+          </a>
           <a href="/Simran_Mandal_Resume.pdf" 
-          download
-          className="px-6 py-3 rounded-full text-lg font-medium text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all"
-        >My Resume</a>
+            download
+            className="px-6 py-3 rounded-full text-lg font-medium text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all"
+          >
+            My Resume
+          </a>
         </motion.div>
 
         <div className="mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start">
@@ -156,10 +134,9 @@ export default function Home(){
               whileHover="hover"
               whileTap="tap"
               className="text-gray-300"
-
-              >
-                <Icon />
-              </motion.a>
+            >
+              <Icon />
+            </motion.a>
           ))}
         </div>
 
