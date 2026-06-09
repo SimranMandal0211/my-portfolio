@@ -19,9 +19,9 @@ import { sectionStyle, headingStyles} from '../styles/shared.styles';
 function SectionHeading() {
   return (
     <motion.div className={headingStyles.wrapper} {...motionVariants.heading}>
-      <h2 className={headingStyles.title}>My Projects</h2>
+      <h2 className={`${headingStyles.title} bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#a78bfa]`}>My Projects</h2>
       <p className={headingStyles.subtitle}>Things I've built with passion</p>
-      <div className={headingStyles.divider} />
+      <div className={`${headingStyles.divider} bg-gradient-to-r from-[#a78bfa] to-[#c084fc]`} />
     </motion.div>
   );
 }

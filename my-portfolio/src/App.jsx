@@ -25,7 +25,7 @@ export default function App(){
   {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)} />}
 
     {introDone && (
-      <div className='relative text-white bg-[#000712]'>
+      <div className='relative text-white bg-[]'>
         <CustomCursor />
         <div className="fixed inset-0 pointer-events-none z-0">
           <div className="absolute top-[15%] left-[10%] w-[700px] h-[700px] rounded-full bg-[#1dd1a1] opacity-[0.03] blur-[200px]" />

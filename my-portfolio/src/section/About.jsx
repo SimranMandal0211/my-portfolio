@@ -59,17 +59,15 @@ const stats = [
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: false }}
             >
-              I build{" "}
-              <span className="text-[#1dd1a1] font-medium">scalable, modern applications</span>
-              {" "}with a strong focus on{" "}
-              <span className="text-[#f4c430] font-medium">clear architecture, delightful UX</span>
-              {" "}and performance. My toolkit spans{" "}
-              <span className="text-[#a78bfa] font-medium">React, Next.js, TypeScript</span>
-              ,{" "}
-              <span className="text-[#1dd1a1] font-medium">Tailwind CSS</span>
-              {" "}and{" "}
+              I build scalable, modern applications with a strong focus on clear architecture,
+              delightful UX and performance. My toolkit spans{" "}
+              <span className="text-[#1dd1a1] font-medium">React</span>,{" "}
+              <span className="text-[#1dd1a1] font-medium">Next.js</span>,{" "}
+              <span className="text-[#a78bfa] font-medium">TypeScript</span>,{" "}
+              <span className="text-[#1dd1a1] font-medium">Tailwind CSS</span>{" "}
+              and{" "}
               <span className="text-[#f4c430] font-medium">RESTful APIs</span>
-              {" "}— bringing ideas to life from concept to production with robust APIs and smooth interfaces.
+              {" "}— bringing ideas to life from concept to production.
             </motion.p>
 
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-xl">
@@ -148,45 +146,25 @@ const stats = [
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false }}
           >
-            I'm a{" "}
-            <span className="text-[#1dd1a1] font-medium">Software Developer</span>
-            {" "}and{" "}
-            <span className="text-[#1dd1a1] font-medium">Web Developer</span>
-            {" "}— passionate about building{" "}
-            <span className="text-[#a78bfa] font-medium">fast, resilient applications</span>
-            . I build scalable, modern applications with a strong focus on{" "}
-            <span className="text-[#f4c430] font-medium">clear architecture, delightful UX</span>
-            {" "}and performance.
+            My journey into development started with a curiosity about how websites work and
+            evolved into a passion for building modern, user-focused applications. Through
+            continuous learning and hands-on projects, I've developed experience across the
+            full development lifecycle — from designing intuitive interfaces to implementing
+            robust functionality.
           </motion.p>
 
           {/* Second paragraph */}
           <motion.p
-            className="text-gray-400 leading-relaxed text-base sm:text-lg mb-4"
+            className="text-gray-400 leading-relaxed text-base sm:text-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: false }}
           >
-            My toolkit spans{" "}
-            <span className="text-[#1dd1a1] font-medium">React, Next.js, TypeScript</span>
-            ,{" "}
-            <span className="text-[#a78bfa] font-medium">Tailwind CSS</span>
-            {" "}and{" "}
-            <span className="text-[#f4c430] font-medium">RESTful APIs</span>
-            {" "}— bringing ideas to life from concept to production with robust APIs and smooth interfaces.
-          </motion.p>
-
-          {/* Third paragraph */}
-          <motion.p
-            className="text-gray-400 leading-relaxed text-base sm:text-lg"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: false }}
-          >
-            I love turning ideas into{" "}
-            <span className="text-[#f4c430] font-medium">scalable, user-friendly products</span>
-            {" "}that make an impact.
+            I enjoy solving real-world problems, learning new technologies, and creating
+            scalable solutions that combine great user experience with clean, maintainable
+            code. My goal is to keep growing as a developer while building products that
+            make a meaningful impact.
           </motion.p>
 
         </motion.div>

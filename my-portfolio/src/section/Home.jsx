@@ -88,18 +88,12 @@ export default function Home(){
 
         </motion.h1>
 
-        <motion.p className="mt-6 text-base sm:text-lg md:text-xl text-gray-500 max-w-2xl mx-auto lg:max-0"
+        <motion.p className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:max-0"
           initial={{opacity: 0, y: 20}}
           animate={{opacity: 1, y:0}}
           transition={{delay: 0.4, duration: 0.8}}
         >
-          I turn complex ideas into{" "}
-          <span className="text-[#1dd1a1] font-medium">seamless, high-impact</span>
-          {" "}web experiences — building{" "}
-          <span className="text-[#f4c430] font-medium">modern, scalable</span>
-          {" "}and {" "}
-          <span className="text-[#a78bfa] font-medium">lightning-fast</span>
-          {" "}applications that make a difference.
+          I turn complex ideas into seamless, high-impact web experiences — building modern, scalable, and lightning-fast applications that make a difference.
         </motion.p>
 
 

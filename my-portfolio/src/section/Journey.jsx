@@ -130,9 +130,9 @@ export default function Journey(){
                 className={headingStyles.wrapper}
                 {...motionVariants.heading}
             >
-                <h2 className={headingStyles.title}>My Journey</h2>
+                <h2 className={`${headingStyles.title} bg-gradient-to-r from-[#f4c430] via-[#f4c430] to-[#e6a817]`}>My Journey</h2>
                 <p className={headingStyles.subtitle}>From curiosity to craft -- every step shaped who I am</p>
-                <div className={headingStyles.divider}></div>
+                <div className={`${headingStyles.divider} bg-gradient-to-r from-[#f4c430] to-[#e6a817]`} />
             </motion.div>
 
 

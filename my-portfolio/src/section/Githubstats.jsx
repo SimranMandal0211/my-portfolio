@@ -17,9 +17,9 @@ import { sectionStyle, headingStyles} from '../styles/shared.styles';
 function SectionHeading(){
     return (
         <motion.div className={headingStyles.wrapper} {...motionVariants.heading}>
-            <h2 className={headingStyles.title}>Github Stats</h2>
+            <h2 className={`${headingStyles.title} bg-gradient-to-r from-[#1dd1a1] via-[#34d399] to-[#1dd1a1]`}>Github Stats</h2>
             <p className={headingStyles.subtitle}>Real numbers, real work</p>
-            <div className={headingStyles.divider} />
+            <div className={`${headingStyles.divider} bg-gradient-to-r from-[#1dd1a1] to-[#34d399]`} />
         </motion.div>
     )
 }
@@ -73,7 +73,10 @@ function GitHubImageCard({ img }) {
         alt={img.alt}
         className={layoutStyles.image}
         loading="lazy"
-        onError={(e) => e.currentTarget.style.display = 'none'}
+        onError={(e) => {
+          e.currentTarget.style.display = 'none';
+          e.currentTarget.parentElement.style.display = 'none';
+        }}
       />
     </div>
   );
