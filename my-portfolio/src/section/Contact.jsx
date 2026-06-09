@@ -71,14 +71,14 @@ export default function Contact(){
         idea: "",
       });
      } catch (error) {
-        console.error("EmailJS Error: ", error);
+        console.error("EmailJS Error: ", error.text || error);
         setStatus("error");
       }
   }
 
 
   return(
-    <section id="contact" className="w-full min-h-screen relative overflow-hidden text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10">
+    <section id="contact" className="w-full min-h-screen relative overflow-hidden text-white py-10 px-6 md:px-20 flex flex-col md:flex-row items-center gap-6">
 
       <div className="relative z-10 w-full flex flex-col md:flex-row items-center gap-10">
         <motion.div className="w-full md:w-1/2 flex justify-center"
@@ -94,16 +94,16 @@ export default function Contact(){
         </motion.div>
 
 
-        <motion.div className =" w-full md:w-1/2 bg-white/5 p-8 rounded-2xl shadow-lg border border-white/10"
+        <motion.div className="w-full md:w-1/2 bg-white/5 p-6 rounded-2xl shadow-lg border border-white/10"
           initial={{opacity: 0, x:50}}
           whileInView={{opacity:1, x:0}}
           transition={{duration:0.6, delay: 0.2}}
         >
           {/* right side */}
-          <h2 className="text-3xl ">
+          <h2 className="text-2xl mb-2">
             Let's work together
           </h2>
-          <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+          <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
             <div className="flex flex-col">
               <label className="mb-1">Your Name <span className="text-red-500">*</span></label>
               <input type="text"
@@ -111,7 +111,7 @@ export default function Contact(){
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`p-3 rounded-md bg-white/10 border ${errors.name ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
+                className={`p-2 rounded-md bg-white/10 border ${errors.name ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
               />
               {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
             </div>
@@ -123,7 +123,7 @@ export default function Contact(){
                 placeholder="Your Email"
                 onChange={handleChange}
                 value={formData.email}
-                className={`p-3 rounded-md bg-white/10 border ${errors.email ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
+                className={`p-2 rounded-md bg-white/10 border ${errors.email ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
               />
               {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
 
@@ -134,7 +134,7 @@ export default function Contact(){
             <div className="flex flex-col">
               <label className="mb-1">Service Needed <span className="text-red-500">*</span></label>
               <select name="service" 
-                className={`p-3 rounded-md bg-white/10 border ${errors.service ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
+                className={`p-2 rounded-md bg-white/10 border ${errors.service ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
                 value={formData.service}
                 onChange={handleChange}
 
@@ -166,7 +166,7 @@ export default function Contact(){
                   placeholder="Your Budget"
                   onChange={handleChange}
                   value={formData.budget}
-                  className={`p-3 rounded-md bg-white/10 border ${errors.budget ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
+                  className={`p-2 rounded-md bg-white/10 border ${errors.budget ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
                 />
                 {errors.budget && <p className="text-red-500 text-xs">{errors.budget}</p>}
               </div>
@@ -178,11 +178,11 @@ export default function Contact(){
                 <span className="text-red-500">*</span>
               </label>
               <textarea name="idea"
-                rows={5}
+                rows={3}
                 placeholder="Enter your Idea"
                 value={formData.idea}
                 onChange={handleChange}
-                className={`p-3 rounded-md bg-white/10 border ${errors.idea ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
+                className={`p-2 rounded-md bg-white/10 border ${errors.idea ? "border-red-500" : "border-gray-500"} text-white focus:outline-none focus:border-[#1dd1a1]`}
               ></textarea>
               
               {errors.idea && 
@@ -211,7 +211,7 @@ export default function Contact(){
             )}
 
 
-            <motion.button className="w-full text-[#000712] bg-[#1dd1a1] disabled:opacity-60 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-[#0fb386]"
+            <motion.button className="w-full text-[#000712] bg-[#1dd1a1] disabled:opacity-60 py-2 rounded-md font-semibold transition-all duration-300 hover:bg-[#0fb386]"
               style={{boxShadow: "0 0 14px rgba(29,209,161,0.4)"}}
               whileHover ={{scale:1.05}}
               whileTap={{scale:0.95}}
